@@ -5,11 +5,12 @@
 	<meta charset="utf-8">
 	<title>Weather Project</title>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<!--<link rel="stylesheet" type="text/css" href="style.css"> -->
   	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
   	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
   	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js"></script>
   	<script src="script.js"></script>
+	<script src="jquery-3.2.1.min.js"></script>
 </head>
 
 <body>
@@ -22,19 +23,19 @@
 	<table class="table table-dark table-striped">
     <thead>
       <tr>
-        <th>City:</th>
-        <th><input type="text" name="city" placeholder="  Enter city name..." size="15"></th>
+        <th><label>City:</label></th>
+        <th><input type="text" id="city" placeholder="  Enter city name..." size="15"></th>
 
-        <th>Country Code:</th>
+        <th><label>Country Code:</label></th>
         <th><input type="text"  id="code" name="countrycode" maxlength="3" size="1" placeholder="  EN"></th>
       </tr>
     </thead>
     <tbody>
       <tr>
-        <td>Details <input type="checkbox" name="details"></td>
+        <td><label>Details</label> <input type="checkbox" name="details"></td>
         <td></td>
         <td></td>
-        <td id="gtt"><input type="button" name="get" id="getdt" value="GET Details"></td>
+        <td><input type="button" id="btnOk" value="GET DATA" class="btn btn-success"></td>
         </tr>
     </tbody>
   	</table>
