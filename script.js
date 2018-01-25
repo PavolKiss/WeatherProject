@@ -22,9 +22,12 @@ $(document).ready(function() {
           temp=-273.15+temp;
           temp=Math.round(temp);
           $("#temp").text(temp+"°C");
-          
+
           var pressure = data.main.pressure;
-          $("#pressure").text(pressure+" hPa");
+          pressure = 100*pressure;
+          pressure=Math.round(pressure);
+          $("#pressure").text(pressure+" Pa");
+
           var humidity = data.main.humidity;
           $("#humidity").text(humidity+" %");
           
@@ -40,12 +43,24 @@ $(document).ready(function() {
 
           var visibility = data.visibility;
           $("#visibility").text(visibility);
+
           var sunrise = data.sys.sunrise;
-          $("#sunrise").text(sunrise);
+          var sunrise2 = new Date(sunrise*1000);
+          var hrs = sunrise2.getHours();
+          var min = sunrise2.getMinutes();
+          $("#sunrise").text(hrs+":"+min);
+
           var sunset = data.sys.sunset;
-          $("#sunset").text(sunset);
+          var sunset2 = new Date(sunset*1000);
+          var hrs = sunset2.getHours();
+          var min = sunset2.getMinutes();
+          $("#sunset").text(hrs+":"+min);
+
           var windspeed = data.wind.speed;
-          $("#windspeed").text(windspeed);
+          windspeed = 3.6*windspeed;
+          windspeed=Math.round(windspeed);
+          $("#windspeed").text(windspeed+" Km/h");
+
           var description = data.weather[0].description;
           $("#desc").text(description);
          },
