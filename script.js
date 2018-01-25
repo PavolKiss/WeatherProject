@@ -30,7 +30,7 @@ $(document).ready(function() {
 
           var humidity = data.main.humidity;
           $("#humidity").text(humidity+" %");
-          
+
           var maxtemp = data.main.temp_max;
           maxtemp=-273.15+maxtemp;
           maxtemp=Math.round(maxtemp);
@@ -42,19 +42,19 @@ $(document).ready(function() {
           $("#mintemp").text(mintemp+"°C");
 
           var visibility = data.visibility;
-          $("#visibility").text(visibility);
+          $("#visibility").text(visibility+" m");
 
           var sunrise = data.sys.sunrise;
           var sunrise2 = new Date(sunrise*1000);
           var hrs = sunrise2.getHours();
           var min = sunrise2.getMinutes();
-          $("#sunrise").text(hrs+":"+min);
+          $("#sunrise").text(hrs +"h" +" : " +min +"m");
 
           var sunset = data.sys.sunset;
           var sunset2 = new Date(sunset*1000);
           var hrs = sunset2.getHours();
           var min = sunset2.getMinutes();
-          $("#sunset").text(hrs+":"+min);
+          $("#sunset").text(hrs +"h" +" : " +min +"m");
 
           var windspeed = data.wind.speed;
           windspeed = 3.6*windspeed;
@@ -74,6 +74,13 @@ $(document).ready(function() {
 $(document).ready(function(){
     $("#detail").click(function(){
         $("#tab2").toggle();
+
+  });
+}); 
+
+$(document).ready(function(){
+    $("#btnOk").click(function(){
+        $("#tab1").toggle();
 
   });
 });
