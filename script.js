@@ -22,14 +22,22 @@ $(document).ready(function() {
           temp=-273.15+temp;
           temp=Math.round(temp);
           $("#temp").text(temp+"°C");
+          
           var pressure = data.main.pressure;
           $("#pressure").text(pressure+" hPa");
           var humidity = data.main.humidity;
           $("#humidity").text(humidity+" %");
+          
           var maxtemp = data.main.temp_max;
+          maxtemp=-273.15+maxtemp;
+          maxtemp=Math.round(maxtemp);
           $("#maxtemp").text(maxtemp+"°C");
+
           var mintemp = data.main.temp_min;
+          mintemp=-273.15+mintemp;
+          mintemp=Math.round(mintemp);
           $("#mintemp").text(mintemp+"°C");
+
           var visibility = data.visibility;
           $("#visibility").text(visibility);
           var sunrise = data.sys.sunrise;
