@@ -32,7 +32,7 @@
     </thead>
     <tbody>
       <tr>
-        <td><label>Details</label> <input type="checkbox" name="details"></td>
+        <td><label>Details</label> <input type="checkbox" name="details" id="detail"></td>
         <td></td>
         <td></td>
         <td><input type="button" id="btnOk" value="GET DATA" class="btn btn-success"></td>
@@ -49,23 +49,58 @@
       </tr>
     </thead>
     <tbody>
-      <tr><td>Temperature:</td>
-      		<td><input type="text" name="temperature"></td>
+      <tr><td>Temperature</td>
+      		<td><div id="temp"></div></td>
       </tr>
 
-      <tr><td>Humanity:</td>
-      		<td><input type="text" name="humanity"></td>
+      <tr><td>Humidity</td>
+      		<td><div id="humidity"></div></td>
       </tr>
 
-      <tr><td>State:</td>
-      		<td><input type="text" name="state"></td>
+      <tr><td>Description</td>
+      		<td><div id="desc"></div></td>
       </tr>		
 
-      <tr><td>Pressure:</td>
-      	<td><input type="text" name="pressure"></td>
+      <tr><td>Pressure</td>
+      	<td><div id="pressure"></div></td>
       </tr>
     </tbody>
   	</table>
+</div>
+
+<div class="container text-center">
+  <table class="table table-dark table-striped" id="tab2" style="display: none;">
+    <thead>
+      <tr>
+      
+      </tr>
+    </thead>
+    <tbody>
+      <tr><td>Wind speed</td>
+          <td><div id="windspeed"></div></td>
+      </tr>
+
+      <tr><td>Sunset</td>
+          <td><div id="sunset"></div></td>
+      </tr>
+
+      <tr><td>Sunrise</td>
+          <td><div id="sunrise"></div></td>
+      </tr>
+
+       <tr><td>Max. Temp.</td>
+          <td><div id="maxtemp"></div></td>
+      </tr>   
+
+       <tr><td>Min. Temp.</td>
+          <td><div id="mintemp"></div></td>
+      </tr>
+
+      <tr><td>Visibility</td>
+        <td><div id="visibility"></div></td>
+      </tr>
+    </tbody>
+    </table>
 </div>
 
 </body>

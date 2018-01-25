@@ -18,8 +18,28 @@ $(document).ready(function() {
          },
          dataType: 'json',
          success : function(data){
-            console.log("temp:"+data.main.temp);
-            console.log("desc:"+data.weather[0].description);
+          var temp = data.main.temp;
+          temp=-273.15+temp;
+          temp=Math.round(temp);
+          $("#temp").text(temp+"°C");
+          var pressure = data.main.pressure;
+          $("#pressure").text(pressure+" hPa");
+          var humidity = data.main.humidity;
+          $("#humidity").text(humidity+" %");
+          var maxtemp = data.main.temp_max;
+          $("#maxtemp").text(maxtemp+"°C");
+          var mintemp = data.main.temp_min;
+          $("#mintemp").text(mintemp+"°C");
+          var visibility = data.visibility;
+          $("#visibility").text(visibility);
+          var sunrise = data.sys.sunrise;
+          $("#sunrise").text(sunrise);
+          var sunset = data.sys.sunset;
+          $("#sunset").text(sunset);
+          var windspeed = data.wind.speed;
+          $("#windspeed").text(windspeed);
+          var description = data.weather[0].description;
+          $("#desc").text(description);
          },
          type: 'GET'
 
@@ -27,6 +47,14 @@ $(document).ready(function() {
 
     }
   });
+
+$(document).ready(function(){
+    $("#detail").click(function(){
+        $("#tab2").toggle();
+
+  });
+});
+
 
 });
 
